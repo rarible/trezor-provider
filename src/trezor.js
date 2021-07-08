@@ -7,7 +7,6 @@ TrezorConnect.manifest({
 })
 
 TrezorConnect.on("UI_EVENT", e => {
-    console.log("got ui event", e)
     if (e.type === "ui-request_pin") {
         showUi("io.daonomic.trezor.AskPin")
             .then(payload => {

@@ -1,6 +1,6 @@
 {
   "name": "@rarible/trezor-provider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Trezor provider for use with Truffle",
   "main": "index.js",
   "repository": {
