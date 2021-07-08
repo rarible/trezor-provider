@@ -15,7 +15,7 @@ class TrezorSubProvider extends HookedWalletSubprovider {
                     .catch(cb)
             },
             signTransaction: function (tx, cb) {
-                console.log(`signTransaction path: ${path} ${tx}`)
+                console.log(`signTransaction path: ${path}`, tx)
                 signTransaction(path, tx)
                     .then(value => cb(null, value))
                     .catch(cb)
