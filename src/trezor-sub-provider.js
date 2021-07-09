@@ -5,8 +5,7 @@ const {
 } = require("./trezor")
 
 class TrezorSubProvider extends HookedWalletSubprovider {
-    constructor(path) {
-        console.log(`Creating TrezorSubProvider with path: ${path}`)
+    constructor({ path, chainId = 1 }) {
         super({
             getAccounts: function (cb) {
                 getAddress(path)
@@ -15,8 +14,7 @@ class TrezorSubProvider extends HookedWalletSubprovider {
                     .catch(cb)
             },
             signTransaction: function (tx, cb) {
-                console.log(`signTransaction path: ${path}`, tx)
-                signTransaction(path, tx)
+                signTransaction(path, tx, chainId)
                     .then(value => cb(null, value))
                     .catch(cb)
             }
