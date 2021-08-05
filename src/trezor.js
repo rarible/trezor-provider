@@ -57,7 +57,7 @@ module.exports = {
             })
     },
     signTransaction(path, tx, chainId) {
-        const transaction = { ...tx, gasLimit: tx.gas, chainId }
+        const transaction = { ...tx, gasLimit: tx.gas, chainId, to: tx.to || "0x", value: tx.value || "0x0" }
         return TrezorConnect.ethereumSignTransaction({ path, transaction } )
             .then(signature => {
                 if (signature.success) {
@@ -71,10 +71,10 @@ module.exports = {
                         v: signature.payload.v,
                         r: buffer(signature.payload.r),
                         s: buffer(signature.payload.s)
-                    })
+                    }, { chain: chainId })
                     return `0x${signed.serialize().toString('hex')}`
                 } else {
-                    return Promise.reject(result.payload)
+                    return Promise.reject(signature.payload)
                 }
             })
     }
