@@ -14,5 +14,6 @@ module.exports = function ({ url, path, chainId = 1 }) {
         engine.addProvider(new RpcSource({ rpcUrl: url }))
     }
     engine.start()
+    engine.send = engine.sendAsync
     return engine
 }
