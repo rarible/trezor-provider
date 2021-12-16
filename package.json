@@ -1,6 +1,6 @@
 {
   "name": "@rarible/trezor-provider",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Trezor provider for use with Truffle",
   "main": "index.js",
   "repository": {
@@ -14,9 +14,9 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@ethereumjs/tx": "3.4.0",
     "child_process": "1.0.2",
     "trezor-connect": "8.2.4-extended",
-    "ethereumjs-tx": "2.1.2",
     "web3-provider-engine": "16.0.3"
   }
 }

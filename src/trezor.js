@@ -1,5 +1,5 @@
 const TrezorConnect = require('trezor-connect').default
-const Transaction = require('ethereumjs-tx').Transaction
+const Transaction = require('@ethereumjs/tx').Transaction
 const showUi = require('./ui')
 
 TrezorConnect.manifest({
@@ -70,8 +70,9 @@ module.exports = {
                         data: buffer(tx.data),
                         v: signature.payload.v,
                         r: buffer(signature.payload.r),
-                        s: buffer(signature.payload.s)
-                    }, { chain: chainId })
+                        s: buffer(signature.payload.s),
+                        chainId: chainId,
+                    })
                     return `0x${signed.serialize().toString('hex')}`
                 } else {
                     return Promise.reject(signature.payload)
