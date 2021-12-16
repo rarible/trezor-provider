@@ -7,7 +7,7 @@ So, you can secure your deployments and other contract interactions using Trezor
 
 ### Usage
 
-Install `@rariblecom/trezor-provider` and use it inside `truffle-config.js`:
+Install `@rarible/trezor-provider` and use it inside `truffle-config.js`:
 
 ```js
 const { createProvider } = require('@rarible/trezor-provider')

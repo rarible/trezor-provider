@@ -4,7 +4,7 @@ const showUi = require('./ui')
 
 TrezorConnect.manifest({
     email: 'e@rarible.com',
-    appUrl: 'https://github.com/rariblecom/trezor-provider'
+    appUrl: 'https://github.com/rarible/trezor-provider'
 })
 
 function normalize(hex) {

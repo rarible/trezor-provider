@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rariblecom/trezor-provider.git"
+    "url": "git+https://github.com/rarible/trezor-provider.git"
   },
   "keywords": [
     "trezor",
